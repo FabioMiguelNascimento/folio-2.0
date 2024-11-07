@@ -1,0 +1,21 @@
+svg {
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+
+li {
+  list-style-type: none;
+  width: fit-content;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
