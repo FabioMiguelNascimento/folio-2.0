@@ -1,0 +1,109 @@
+@use "main" as *;
+
+section#mainPage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-content: baseline;
+    margin-block-start: 10rem;
+    
+    gap: 1.5rem;
+    min-height: calc(100vh - 10rem);
+    
+    color: $color-text;
+
+  .leftCtn {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 2rem;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+        height: fit-content;
+      .hello {
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+
+      .name {
+        font-size: 3.5rem;
+        font-weight: 700;
+        width: fit-content;
+        background: linear-gradient(to right, $gradient-text-purple);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .buttonsCtn {
+        display: flex;
+        gap: .5rem;
+        height: fit-content;
+
+        button {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid $color-border;
+            height: fit-content;
+            color: $color-text;
+            background: $color-button;
+            transition: 200ms;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .8rem;
+            gap: .5rem;
+
+            svg {
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                background: $color-button-hover;
+                color: $color-text-secondary;
+                border: 1px solid transparent;
+                background-clip: padding-box;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    left: -1px;
+                    right: -1px;
+                    bottom: -1px;
+                    border-radius: inherit;
+                    padding: 1px;
+                    background: linear-gradient(to right, $gradient-purple, $gradient-purple);
+                    -webkit-mask: 
+                        linear-gradient(#fff 0 0) content-box, 
+                        linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: destination-out;
+                    mask-composite: exclude;
+                }
+            }
+        }
+    }
+
+
+  }
+
+  .rightCtn {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: right;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: 500px;
+      border-radius: 150px;
+      border: 2px solid $color-border;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
