@@ -1,0 +1,54 @@
+@use 'main' as *;
+
+.navbarCtn {
+    width: calc(100% - 4rem);
+    transition: 200ms;
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: $color-text;
+
+    position: fixed;
+
+    background-color: transparent;
+    background-image: radial-gradient($color-bg 1px, transparent 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    mask: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
+    opacity: 1;
+    padding-bottom: 3rem;
+
+    z-index: 100;
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .navbarList {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .item {
+            cursor: pointer;
+            min-width: 16px;
+
+            .themeChanger {
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: rotate(360deg);
+                }
+
+                svg {
+                    font-size: 1.2rem;
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+    }
+}

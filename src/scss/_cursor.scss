@@ -1,0 +1,12 @@
+@use 'main' as *;
+
+.cursor {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    background: $color-text;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 9999;
+}

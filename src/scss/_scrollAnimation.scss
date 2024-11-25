@@ -1,0 +1,50 @@
+@use 'main' as *;
+
+.scrollAnimation {
+    width: 25px;
+    height: 50px;
+    padding-top: 10px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: start;
+    justify-content: center;
+    background: $color-button;
+    border-radius: 50px; 
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+    transition: 200ms;
+    transform-origin: 0 0;
+    flex-shrink: 0;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        scale: 1;
+    }
+
+    .circle {
+        width: 10px;
+        height: 10px;
+        background: $color-button-hover;
+        border-radius: 50%; 
+        animation: scroll 1.5s infinite;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
