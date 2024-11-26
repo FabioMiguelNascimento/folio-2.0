@@ -7,7 +7,7 @@ function MainPage() {
     <>
       <div className="leftCtn">
         <div className="title">
-          <p className="hello">Oi <img src="../src/assets/emoji.png" className="emoji"/> eu sou o</p>
+          <p className="hello">Oi <img src="./emoji.png" className="emoji"/> eu sou o</p>
           <p className="name">Fábio</p>
           <p className="prof">Desenvolvedor WEB</p>
         </div>
@@ -28,7 +28,7 @@ function MainPage() {
       </div>
 
       <div className="rightCtn">
-        <img src="../src/assets/profile.jpg" alt="Fábio" />
+        <img src="./profile.jpg" alt="" />
       </div>
     </>
   );
