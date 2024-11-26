@@ -14,11 +14,11 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 20px;
-    z-index: 1000;
+    z-index: 99;
     opacity: 0;
     visibility: hidden;
     scale: 0;
-    transition: 200ms;
+    transition: 500ms;
     transform-origin: 0 0;
     flex-shrink: 0;
 

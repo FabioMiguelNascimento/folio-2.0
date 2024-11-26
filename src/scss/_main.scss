@@ -2,38 +2,44 @@
 
 body.light {
   --color-roxo: #821cd0;
+  --color-roxo-accent: #a02ee1;
   --color-accent: #0060ff;
   --color-bg: #fff;
+  --color-bg-accent: #f4f4f4;
   --color-button: #f4f4f4;
   --color-button-hover: #121212;
   --color-border: #e4e4e4;
   --color-text: #303030;
   --color-text-half-opacity: rgba(48, 48, 48, 0.1);
   --color-text-secondary: #eeeeee;
-  --gradient-dark: #0000, #272727, #313131;
-  --gradient-light: #e4e4e4, #d4d4d4, #c4c4c4;
-  --gradient-purple: var(--color-roxo), var(--color-text), transparent;
+  --gradient-default: var(--color-bg), var(--color-bg-accent), var(--color-bg);
+  --gradient-purple: var(--color-roxo), var(--color-roxo-accent), var(--color-roxo);
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
+  --is-dark-theme: 0;
 }
 
 body.dark {
   --color-roxo: #821cd0;
+  --color-roxo-accent: #a02ee1;
   --color-accent: #0060ff;
   --color-bg: #000;
+  --color-bg-accent: #121212;
   --color-button: #121212;
   --color-button-hover: #fff;
   --color-border: #292929;
   --color-text: #eeeeee;
   --color-text-half-opacity: rgba(255, 255, 255, 0.1);
+  --gradient-default: var(--color-bg), var(--color-bg-accent), var(--color-bg);
   --color-text-secondary: #303030;
-  --gradient-dark: #00000000, #272727, #313131;
-  --gradient-light: #e4e4e4, #d4d4d4, #c4c4c4;
-  --gradient-purple: var(--color-roxo), var(--color-text), transparent;
+  --gradient-purple: var(--color-roxo), var(--color-roxo-accent), var(--color-roxo);
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
+  --is-dark-theme: 1;
 }
 
 $color-roxo: var(--color-roxo);
+$color-roxo-accent: var(--color-roxo-accent);
 $color-accent: var(--color-accent);
+$color-bg-accent: var(--color-bg-accent);
 $color-text: var(--color-text);
 $color-text-half-opacity: var(--color-text-half-opacity);
 $color-bg: var(--color-bg);
@@ -41,8 +47,7 @@ $color-button: var(--color-button);
 $color-button-hover: var(--color-button-hover);
 $color-border: var(--color-border);
 $color-text-secondary: var(--color-text-secondary);
-$gradient-dark: var(--gradient-dark);
-$gradient-light: var(--gradient-light);
+$gradient-default: var(--gradient-default);
 $gradient-purple: var(--gradient-purple);
 $gradient-text-purple: var(--gradient-text-purple);
 
@@ -52,6 +57,13 @@ html {
 
 section {
   scroll-snap-align: start;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999 !important;
 }
 
 #root,
@@ -70,29 +82,8 @@ body {
   transition: 200ms;
   position: relative;
 
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('./bg.png') no-repeat center center fixed;
-    background-size: cover;
-    z-index: 0;
-  }
-
-  &::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(
-      transparent,
-      $color-bg 80%);
-    z-index: 1; 
+  * > * {
+    box-sizing: border-box;
   }
 
   main {

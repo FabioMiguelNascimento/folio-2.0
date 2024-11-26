@@ -3,14 +3,39 @@
 section#mainPage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  
+
   place-content: center;
   box-sizing: border-box;
   padding-bottom: 10rem;
   gap: 1.5rem;
   min-height: 100vh;
+  z-index: 2;
+  position: relative;
 
   color: $color-text;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./bg.png") no-repeat center center fixed;
+    background-size: cover;
+    z-index: -2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent, $color-bg 80%);
+    z-index: -1;
+  }
 
   .leftCtn {
     display: flex;
@@ -37,9 +62,15 @@ section#mainPage {
             transition: 200ms;
           }
 
-          &:hover {
+          &:hover,
+          &:active,
+          &:focus {
             animation: wave 2.1s 0.6s infinite;
             transform-origin: 75% 75%;
+
+            @media (hover: none) {
+              animation: wave 2.1s 0.6s infinite;
+            }
 
             @keyframes wave {
               0% {
@@ -75,10 +106,9 @@ section#mainPage {
         font-size: 3.5rem;
         font-weight: 700;
         width: fit-content;
-        background: linear-gradient(to right, $gradient-text-purple);
-        -webkit-background-clip: text;
+        color: transparent;
         background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to right, $gradient-text-purple);
       }
     }
 
@@ -101,7 +131,7 @@ section#mainPage {
         align-items: center;
         justify-content: center;
         font-size: 0.8rem;
-        gap: .7rem;
+        gap: 0.7rem;
         text-decoration: none;
 
         svg {
@@ -152,6 +182,51 @@ section#mainPage {
       border: 2px solid $color-border;
       object-fit: cover;
       object-position: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section#mainPage {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 !important;
+    text-align: center;
+    height: 100vh;
+
+    .leftCtn {
+      .title {
+        .hello {
+          font-size: 1.2rem;
+        }
+        .name {
+          font-size: 2.5rem;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .prof {
+          font-size: 1.5rem;
+        }
+      }
+
+      .buttonsCtn {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+          padding: 6px 16px;
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .rightCtn {
+      justify-items: center;
+
+      img {
+        max-width: 250px;
+        height: 400px;
+      }
     }
   }
 }
