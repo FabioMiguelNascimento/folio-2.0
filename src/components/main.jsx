@@ -7,6 +7,8 @@ import Cursor from "./cursor";
 import ScrollAnimation from "./scrollAnimation";
 import Modal from "./modal";
 import Resume from "./resume";
+import Sobre from "./sobre";
+import Projects from "./projects";
 
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -17,8 +19,8 @@ function App() {
       <Cursor />
       <Navbar />
       <ScrollAnimation />
-      <Modal 
-        isOpen={isResumeOpen} 
+      <Modal
+        isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
         special={special}
       >
@@ -28,7 +30,12 @@ function App() {
         <section id="mainPage">
           <MainPage openResume={() => setIsResumeOpen(true)} />
         </section>
-        {/* <div style={{ height: "100vh" }}></div> */}
+        <section id="about">
+          <Sobre />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
       </main>
     </>
   );

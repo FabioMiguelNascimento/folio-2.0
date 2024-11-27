@@ -15,11 +15,18 @@ function Modal({ isOpen, onClose, children, special = [] }) {
         type: "spring",
         damping: 25,
         stiffness: 200,
+        duration: 0.5,
       },
     },
     exit: {
       x: "-100vw",
       opacity: 0,
+      transition: {
+        type: "spring",
+        damping: 25,
+        stiffness: 200,
+        duration: 0.5,
+      },
     },
   };
 
@@ -35,9 +42,11 @@ function Modal({ isOpen, onClose, children, special = [] }) {
         >
           <FontAwesomeIcon icon={faTimes} className="close" onClick={onClose} />
           <div className="specialCtn">
-            {special.length > 0 ? special.map((item) => {
-                return <div key={item.id}>{item.content}</div>;
-            }) : null}
+            {special.length > 0
+              ? special.map((item) => {
+                  return <div key={item.id}>{item.content}</div>;
+                })
+              : null}
           </div>
           <div className="modalCtn">{children}</div>
         </motion.div>

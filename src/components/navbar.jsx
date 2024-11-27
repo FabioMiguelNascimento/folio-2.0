@@ -4,22 +4,38 @@ import ThemeChanger from "./themeChanger";
 function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <header className={`navbarCtn ${!isOpen ? 'has-mask' : ''}`}>
+    <header className={`navbarCtn ${!isOpen ? "has-mask" : ""}`}>
       <h1 className="logo">Fábio Miguel</h1>
-      
-      <div className={`hamburger ${isOpen ? 'active' : ''}`} 
-           onClick={() => setIsOpen(!isOpen)}>
+
+      <div
+        className={`hamburger ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span></span>
         <span></span>
       </div>
 
-      <ul className={`navbarList ${isOpen ? 'active' : ''}`}>
-        <li className="item">Home</li>
-        <li className="item">Sobre</li>
-        <li className="item">Projetos</li>
-        <li className="item">Contato</li>
-        <li className="item"> <ThemeChanger /></li>
+      <ul className={`navbarList ${isOpen ? "active" : ""}`}>
+        <a href="#mainPage" className="item" onClick={handleLinkClick}>
+          <li>Home</li>
+        </a>
+        <a href="#about" className="item" onClick={handleLinkClick}>
+          <li>Sobre</li>
+        </a>
+        <a href="#projects" className="item" onClick={handleLinkClick}>
+          <li>Projetos</li>
+        </a>
+        <a href="" className="item" onClick={handleLinkClick}>
+          <li>Contato</li>
+        </a>
+        <li className="item">
+          <ThemeChanger />
+        </li>
       </ul>
     </header>
   );

@@ -61,6 +61,10 @@ html {
 
 section {
   scroll-snap-align: start;
+  scroll-margin: 88px;
+  @media screen and (max-width: 768px) {
+    scroll-margin: 96px;    
+  }
 }
 
 canvas {

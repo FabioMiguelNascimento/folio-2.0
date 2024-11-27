@@ -1,42 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-function Cursor() {
+const App = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isMobile, setIsMobile] = useState(false);
+
+  const moveCursor = (e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
-    };
-
-    const moveCursor = (e) => {
-      setPosition({ x: e.pageX, y: e.pageY });
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    if (!isMobile) {
-      window.addEventListener("mousemove", moveCursor);
-    }
-
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-      window.removeEventListener("mousemove", moveCursor);
-    };
-  }, [isMobile]);
-
-  if (isMobile) return null;
+    window.addEventListener('mousemove', moveCursor);
+    return () => window.removeEventListener('mousemove', moveCursor);
+  }, []);
 
   return (
-    <div
-      className="cursor"
-      style={{
-        left: `${position.x - 5}px`,
-        top: `${position.y - 5}px`,
-      }}
-    />
+    <div>
+      <div
+        className="cursor"
+        style={{
+          position: 'fixed',
+          left: `${position.x - 5}px`,
+          top: `${position.y - 5}px`,
+        }}
+      />
+    </div>
   );
-}
+};
 
-export default Cursor;
+export default App;
+
