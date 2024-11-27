@@ -10,6 +10,10 @@ import {
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 import Confetti from "./confetti";
+import jqueryIco from "../assets/jqueryIco.webp";
+import websocket from "../assets/websocket.png";
+import mysqlIco from "../assets/mysqlIco.png";
+import resumePdf from "../assets/resume.pdf";
 
 function Resume({ setSpecial }) {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -37,9 +41,8 @@ function Resume({ setSpecial }) {
           <span
             className="special-btn"
             onClick={async () => {
-              const url = "src/assets/resume.pdf";
               try {
-                const response = await fetch(url);
+                const response = await fetch(resumePdf);
                 if (!response.ok) {
                   throw new Error(`Response status: ${response.status}`);
                 }
@@ -111,7 +114,7 @@ function Resume({ setSpecial }) {
             JavaScript
           </div>
           <div className="skill-item">
-            <img src="src/assets/jqueryIco.webp" alt="jquery" />
+            <img src={jqueryIco} alt="jquery" />
             jQuery
           </div>
           <div className="skill-item">
@@ -131,11 +134,11 @@ function Resume({ setSpecial }) {
             Figma
           </div>
           <div className="skill-item">
-            <img src="src/assets/websocket.png" alt="websocket" />
+            <img src={websocket} alt="websocket" />
             WebSocket
           </div>
           <div className="skill-item">
-            <img src="src/assets/mysqlIco.png" alt="mysql" />
+            <img src={mysqlIco} alt="mysql" />
             MySQL
           </div>
         </div>
