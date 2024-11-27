@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 function ThemeChanger() {
-  const [theme, setTheme] = useState(faMoon);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const storedTheme = localStorage.getItem("theme");
+  const initialTheme = storedTheme ? JSON.parse(storedTheme) : true;
+  const [isDarkMode, setIsDarkMode] = useState(initialTheme);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -14,17 +15,18 @@ function ThemeChanger() {
       document.body.classList.add("light");
       document.body.classList.remove("dark");
     }
+
+    localStorage.setItem("theme", JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
   function changeTheme() {
-    setTheme(isDarkMode ? faSun : faMoon);
     setIsDarkMode(!isDarkMode);
   }
 
   return (
     <FontAwesomeIcon
       className="themeChanger"
-      icon={theme}
+      icon={isDarkMode ? faSun : faMoon}
       onClick={changeTheme}
     />
   );

@@ -1,5 +1,20 @@
 @use "main" as *;
 
+.special-btn {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, $gradient-purple);
+  color: $force-white !important;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  * > * {
+    color: $force-white !important;
+  }
+}
+
 .resume-section {
   margin-bottom: 3rem;
 

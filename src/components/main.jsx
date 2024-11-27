@@ -28,7 +28,7 @@ function App() {
         <section id="mainPage">
           <MainPage openResume={() => setIsResumeOpen(true)} />
         </section>
-        <div style={{ height: "100vh" }}></div>
+        {/* <div style={{ height: "100vh" }}></div> */}
       </main>
     </>
   );

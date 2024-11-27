@@ -36,15 +36,4 @@
     margin: 4rem auto;
     padding: 0 1rem;
   }
-
-  .special-btn {
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(to right, $gradient-purple);
-    color: $color-text;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
 }

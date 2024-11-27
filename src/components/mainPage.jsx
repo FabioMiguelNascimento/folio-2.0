@@ -8,7 +8,7 @@ function MainPage({ openResume }) {
       <div className="leftCtn">
         <div className="title">
           <p className="hello">
-            Oi <img src="./emoji.png" className="emoji" /> eu sou o
+            Oi <img src="src/assets/emoji.png" className="emoji" /> eu sou o
           </p>
           <p className="name">Fábio</p>
           <p className="prof">Desenvolvedor WEB</p>
@@ -28,7 +28,7 @@ function MainPage({ openResume }) {
           >
             LinkedIn <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="mailto:fabio@example.com">
+          <a href="mailto:fabiomnascimento05@gmail.com">
             Contato <FontAwesomeIcon icon={faPaperPlane} />
           </a>
           <a onClick={openResume}>
@@ -38,7 +38,7 @@ function MainPage({ openResume }) {
       </div>
 
       <div className="rightCtn">
-        <img src="./profile.jpg" alt="" />
+        <img src="src/assets/profile.jpg" alt="" />
       </div>
     </>
   );

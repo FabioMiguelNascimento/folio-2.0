@@ -37,7 +37,7 @@ function Resume({ setSpecial }) {
           <span
             className="special-btn"
             onClick={async () => {
-              const url = "./resume.pdf";
+              const url = "src/assets/resume.pdf";
               try {
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -111,7 +111,7 @@ function Resume({ setSpecial }) {
             JavaScript
           </div>
           <div className="skill-item">
-            <img src="./jqueryIco.webp" alt="jquery" />
+            <img src="src/assets/jqueryIco.webp" alt="jquery" />
             jQuery
           </div>
           <div className="skill-item">
@@ -131,11 +131,11 @@ function Resume({ setSpecial }) {
             Figma
           </div>
           <div className="skill-item">
-            <img src="./websocket.png" alt="websocket" />
+            <img src="src/assets/websocket.png" alt="websocket" />
             WebSocket
           </div>
           <div className="skill-item">
-            <img src="./mysqlIco.png" alt="mysql" />
+            <img src="src/assets/mysqlIco.png" alt="mysql" />
             MySQL
           </div>
         </div>
