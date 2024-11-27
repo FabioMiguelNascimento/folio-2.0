@@ -53,12 +53,15 @@ section#mainPage {
 
         .emoji {
           transition: 200ms;
-          display: inline-block;
-          width: fit-content;
+          display: inline-flex;
+          align-items: center;
+          width: 1.1rem;
           height: 1.5rem;
 
           img {
-            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             object-position: center;
             transition: 200ms;
           }
@@ -199,6 +202,16 @@ section#mainPage {
       .title {
         .hello {
           font-size: 1.2rem;
+
+          .emoji {
+            width: .9rem;
+            height: 1.3rem;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
         }
         .name {
           font-size: 2.5rem;

@@ -10,7 +10,7 @@ function MainPage({ openResume }) {
       <div className="leftCtn">
         <div className="title">
           <p className="hello">
-            Oi <img src={emoji} className="emoji" /> eu sou o
+            Oi <img src={emoji} className="emoji" alt="emoji" /> eu sou o
           </p>
           <p className="name">Fábio</p>
           <p className="prof">Desenvolvedor WEB</p>
