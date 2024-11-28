@@ -42,9 +42,9 @@ O objetivo deste portfólio é não apenas exibir minhas habilidades técnicas, 
 ## 📬 Entre em Contato
 
 Se você gostou do que viu ou quer trocar ideias sobre tecnologia, fique à vontade para me enviar uma mensagem!  
-- **Email**: [seu-email@example.com](mailto:fabiomnascimento05@gmail.com)  
-- **LinkedIn**: [Seu Perfil no LinkedIn](https://www.linkedin.com/in/fab-nascimento/)  
-- **GitHub**: [Seu GitHub](https://github.com/FabioMiguelNascimento)  
+- **Email**: [fabiomnascimento05@gmail.com](mailto:fabiomnascimento05@gmail.com)  
+- **LinkedIn**: [Fábio Miguel Nascimento](https://www.linkedin.com/in/fab-nascimento/)  
+- **GitHub**: [FabioMiguelNascimento](https://github.com/FabioMiguelNascimento)  
 
 ---
 
