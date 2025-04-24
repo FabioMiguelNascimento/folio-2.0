@@ -1,16 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faPaperPlane, faFileInvoice } from "@fortawesome/free-solid-svg-icons";
-import emoji from "../assets/emoji.png";
-import profile from "../assets/profile.jpg";
+import { faFileInvoice, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function MainPage({ openResume }) {
+function Hero({ openResume }) {
   return (
     <>
       <div className="leftCtn">
         <div className="title">
           <p className="hello">
-            Oi <img src={emoji} className="emoji" alt="emoji" /> eu sou o
+            Oi <img src="/icons/emoji.png" className="emoji" alt="emoji" /> eu sou o
           </p>
           <p className="name">Fábio</p>
           <p className="prof">Desenvolvedor WEB</p>
@@ -40,10 +38,10 @@ function MainPage({ openResume }) {
       </div>
 
       <div className="rightCtn">
-        <img src={profile} alt="" />
+        <img src="/images/profile/profile.jpg" alt="" />
       </div>
     </>
   );
 }
 
-export default MainPage;
+export default Hero;

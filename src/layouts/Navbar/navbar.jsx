@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeChanger from "./themeChanger";
+import ThemeChanger from "../../components/common/ThemeChanger/themeChanger";
 
 function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);

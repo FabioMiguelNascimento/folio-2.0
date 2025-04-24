@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import Navbar from "./navbar";
-import MainPage from "./mainPage";
-import "../scss/imports.scss";
-import Cursor from "./cursor";
-import ScrollAnimation from "./scrollAnimation";
-import Modal from "./modal";
-import Resume from "./resume";
-import Sobre from "./sobre";
-import Projects from "./projects";
+import Cursor from "./components/common/Cursor/cursor";
+import Modal from "./components/common/Modal/modal";
+import ScrollAnimation from "./components/common/ScrollAnimation/scrollAnimation";
+import Navbar from "./layouts/Navbar/navbar";
+import About from "./sections/About/About";
+import Hero from "./sections/Hero/Hero";
+import Projects from "./sections/Projects/Projects";
+import Resume from "./sections/Resume/Resume";
+import "./styles/imports.scss";
 
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -28,10 +28,10 @@ function App() {
       </Modal>
       <main>
         <section id="mainPage">
-          <MainPage openResume={() => setIsResumeOpen(true)} />
+          <Hero openResume={() => setIsResumeOpen(true)} />
         </section>
         <section id="about">
-          <Sobre />
+          <About />
         </section>
         <section id="projects">
           <Projects />

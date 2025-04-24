@@ -1,19 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faReact,
-  faJs,
-  faHtml5,
-  faSass,
   faFigma,
   faGit,
+  faHtml5,
+  faJs,
+  faReact,
+  faSass,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import React, { useEffect, useState } from "react";
-import Confetti from "./confetti";
-import jqueryIco from "../assets/jqueryIco.webp";
-import websocket from "../assets/websocket.png";
-import mysqlIco from "../assets/mysqlIco.png";
-import resumePdf from "../assets/resume.pdf";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import Confetti from "../../components/ui/Confetti/confetti";
 
 function Resume({ setSpecial }) {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -42,7 +38,7 @@ function Resume({ setSpecial }) {
             className="special-btn"
             onClick={async () => {
               try {
-                const response = await fetch(resumePdf);
+                const response = await fetch("/assets/resume.pdf");
                 if (!response.ok) {
                   throw new Error(`Response status: ${response.status}`);
                 }
@@ -114,7 +110,7 @@ function Resume({ setSpecial }) {
             JavaScript
           </div>
           <div className="skill-item">
-            <img src={jqueryIco} alt="jquery" />
+            <img src="/icons/jqueryIco.webp" alt="jquery" />
             jQuery
           </div>
           <div className="skill-item">
@@ -134,11 +130,11 @@ function Resume({ setSpecial }) {
             Figma
           </div>
           <div className="skill-item">
-            <img src={websocket} alt="websocket" />
+            <img src="/icons/websocket.png" alt="websocket" />
             WebSocket
           </div>
           <div className="skill-item">
-            <img src={mysqlIco} alt="mysql" />
+            <img src="/icons/mysqlIco.png" alt="mysql" />
             MySQL
           </div>
         </div>
