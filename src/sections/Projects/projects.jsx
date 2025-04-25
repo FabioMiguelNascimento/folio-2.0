@@ -1,28 +1,25 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Projects() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    amount: 0.3,
-    margin: "100px 0px",
-  });
-
   const containerVariants = {
-    hidden: { opacity: 0, y: 75 },
+    hidden: { opacity: 0, x: 75 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: "easeInOut" }
+      x: 0,
+      transition: { duration: 0.3, ease: "easeInOut" },
     },
   };
 
   return (
     <motion.div
-      ref={ref}
       className="projectsCtn"
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{
+        amount: 0.3,
+        margin: "5px 0px 5px 5px",
+        once: true,
+      }}
       variants={containerVariants}
     >
       <div className="placeholder">

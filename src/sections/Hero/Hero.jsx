@@ -1,16 +1,20 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFileInvoice, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BackgroundGrid from "../../components/common/BackgroundGrid/BackgroundGrid";
 
-function Hero({ openResume }) {
+function MainPage({ openResume }) {
   return (
-    <>
+    <div className="hero-wrapper">
+      <BackgroundGrid />
       <div className="leftCtn">
         <div className="title">
-          <p className="hello">
-            Oi <img src="/icons/emoji.png" className="emoji" alt="emoji" /> eu sou o
-          </p>
-          <p className="name">Fábio</p>
+          <div className="title-row">
+            <p className="hello">
+              Oi <img src="/icons/emoji.png" className="emoji" alt="emoji" /> eu sou o
+            </p>
+            <p className="name">Fábio</p>
+          </div>
           <p className="prof">Desenvolvedor WEB</p>
         </div>
         <div className="buttonsCtn">
@@ -40,8 +44,8 @@ function Hero({ openResume }) {
       <div className="rightCtn">
         <img src="/images/profile/profile.jpg" alt="" />
       </div>
-    </>
+    </div>
   );
 }
 
-export default Hero;
+export default MainPage;

@@ -1,10 +1,11 @@
 @use 'base/reset';
 @use 'abstracts/main';
+@use 'components/confetti';
 @use 'components/navbar';
-@use 'sections/hero';
 @use 'components/cursor';
 @use 'components/scrollAnimation';
 @use 'components/modal';
+@use 'sections/hero';
 @use 'sections/resume';
 @use 'sections/about';
 @use 'sections/projects';

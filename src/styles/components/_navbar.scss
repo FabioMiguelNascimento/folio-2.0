@@ -4,27 +4,23 @@
     width: 100%;
     transition: 200ms;
     padding: 1rem 2rem;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     color: $color-text;
-
     position: fixed;
-
     background-color: transparent;
     background-image: radial-gradient($color-bg 1px, transparent 1px);
     background-size: 4px 4px;
     backdrop-filter: blur(3px);
     opacity: 1;
     padding-bottom: 3rem;
+    z-index: 100;
 
     &.has-mask {
         mask: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
     }
 
-    z-index: 100;
     .logo {
         font-size: 1.5rem;
         font-weight: 700;
@@ -41,6 +37,11 @@
             min-width: 16px;
             text-decoration: none;
             color: inherit;
+            transition: color $transition-default ease;
+
+            &:hover {
+                color: $color-roxo;
+            }
 
             .themeChanger {
                 transition: transform 0.3s ease;
@@ -83,47 +84,56 @@
         span:nth-child(1) {
             rotate: 45deg;
             transform: translate(0, 6px);
-            top: 50%;
         }
         span:nth-child(2) {
             rotate: -45deg;
             transform: translate(0, -6px);
-            top: 50%;
+        }
+    }
+}
+
+// Mobile Navigation Styles
+.mobile-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+
+        .item {
+            font-size: 2rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color $transition-default ease;
+
+            &:hover {
+                color: $color-roxo;
+            }
+        }
+
+        .themeChanger {
+            font-size: 2rem;
         }
     }
 }
 
 @media (max-width: 768px) {
     .navbarCtn {
-        width: calc(100% );
+        width: 100%;
 
         .hamburger {
             display: flex;
         }
 
-        .navbarList {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            height: 100vh;
-            width: calc(100vw);
-            background: $color-bg;
-            padding: 6rem 2rem;
-            flex-direction: column;
-            transition: 200ms;
-
-            &.active {
-                right: 0;
-
-                .navbarCtn {
-                    mask: none;
-                }
-            }
-
-            .item {
-                font-size: 1.5rem;
-                padding: 1rem 0;
-            }
+        .desktop-nav {
+            display: none;
         }
 
         .logo {

@@ -1,74 +1,235 @@
 @use '../abstracts/main' as *;
 
-.sobreCtn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 2rem;
+.about-container {
   color: $color-text;
-  
-  .title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(to right, $gradient-text-purple);
-  }
-  
-  .description {
-    max-width: 600px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .about-header {
     text-align: center;
-    margin-bottom: 3rem;
-    line-height: 1.6;
-  }
-  
-  .infoGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    width: 100%;
+    margin-bottom: 4rem;
     
-    .infoItem {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: transparent;
+      background-clip: text;
+      background-image: linear-gradient(to right, $gradient-text-purple);
+    }
+
+    .header-line {
+      width: 60px;
+      height: 4px;
+      background: $color-roxo;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .about-content {
+    display: grid;
+    gap: 4rem;
+
+    .about-text {
+      max-width: 700px;
+      margin: 0 auto;
       text-align: center;
       
-      .icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: $color-roxo;
-      }
-      
-      h3 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-      
       p {
-        font-size: 1rem;
-        color: $color-text;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 3rem;
+      
+      .about-section {
+        background: $color-bg-accent;
+        border-radius: 5px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        border: 1px solid $color-border;
+
+        &:hover {
+          border-color: $color-roxo;
+          transform: translateY(-5px);
+        }
+
+        .section-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 2rem;
+          
+          svg {
+            color: $color-roxo;
+            font-size: 1.5rem;
+          }
+
+          h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+          }
+        }
+
+        .section-content {
+          .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0.5rem;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background: $color-roxo;
+            }
+
+            &:not(:last-child):after {
+              content: '';
+              position: absolute;
+              left: 3px;
+              top: 0.7rem;
+              width: 2px;
+              height: calc(100% + 1rem);
+              background: $color-border;
+            }
+
+            .date {
+              font-size: 0.9rem;
+              color: $color-roxo;
+              margin-bottom: 0.5rem;
+              display: block;
+            }
+
+            h4 {
+              font-size: 1.1rem;
+              font-weight: 600;
+              margin-bottom: 0.3rem;
+            }
+
+            .company {
+              font-size: 0.9rem;
+              opacity: 0.8;
+              display: block;
+              margin-bottom: 0.5rem;
+            }
+
+            p {
+              font-size: 0.9rem;
+              line-height: 1.6;
+            }
+          }
+        }
+
+        &.skills {
+          .skills-content {
+            display: grid;
+            gap: 1.5rem;
+
+            .skill-item {
+              position: relative;
+              padding-left: 1.5rem;
+
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.5rem;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: $color-roxo;
+              }
+
+              span {
+                font-weight: 600;
+                display: block;
+                margin-bottom: 0.3rem;
+              }
+
+              p {
+                font-size: 0.9rem;
+                opacity: 0.8;
+                line-height: 1.6;
+              }
+            }
+          }
+        }
+
+        .experience-time {
+          display: inline-block;
+          margin-top: 1rem;
+          padding: 0.5rem 1rem;
+          background: $color-button;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .about-footer {
+      text-align: center;
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $color-roxo;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        svg {
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          color: $color-roxo-accent;
+          
+          svg {
+            transform: translateX(5px);
+          }
+        }
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .sobreCtn {
-    padding: 2rem 1rem;
-    
-    .title {
-      font-size: 2rem;
+  .about-container {
+    .about-header {
+      h2 {
+        font-size: 2rem;
+      }
     }
-    
-    .description {
-      font-size: 0.9rem;
-    }
-    
-    .infoGrid {
-      grid-template-columns: 1fr;
+
+    .about-content {
+      gap: 2rem;
+
+      .about-text {
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .about-grid {
+        gap: 2rem;
+
+        .about-section {
+          padding: 1.5rem;
+        }
+      }
     }
   }
 }

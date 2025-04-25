@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 body.light {
   --force-white: #fff;
@@ -17,6 +17,7 @@ body.light {
   --gradient-purple: var(--color-roxo), var(--color-roxo-accent), var(--color-roxo);
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
   --is-dark-theme: 0;
+  --main-padding: 6rem 2rem;
 }
 
 body.dark {
@@ -37,6 +38,7 @@ body.dark {
   --gradient-purple: var(--color-roxo), var(--color-roxo-accent), var(--color-roxo);
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
   --is-dark-theme: 1;
+  --main-padding: 6rem 2rem;
 }
 
 $force-white: var(--force-white);
@@ -55,6 +57,10 @@ $gradient-default: var(--gradient-default);
 $gradient-purple: var(--gradient-purple);
 $gradient-text-purple: var(--gradient-text-purple);
 
+$transition-fast: 100ms;
+$transition-default: 300ms;
+$transition-slow: 500ms;
+
 html {
   scroll-behavior: smooth;
 }
@@ -67,19 +73,12 @@ section {
   }
 }
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999 !important;
-}
-
 #root,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "League Spartan", sans-serif;
   min-width: 100vw;
   min-height: 100vh;
   background: $color-bg;
@@ -87,7 +86,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  transition: 200ms;
+  transition: background-color $transition-default ease;
   position: relative;
 
   * > * {
@@ -100,6 +99,12 @@ body {
     display: grid;
     gap: 1.5rem;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
+    padding: var(--main-padding);
+    overflow-x: hidden;
+
+    @media screen and (max-width: 768px) {
+      --main-padding: 4rem 1rem;
+    }
   }
 }

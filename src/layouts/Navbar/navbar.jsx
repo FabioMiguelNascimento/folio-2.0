@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "../../components/common/Modal/modal";
 import ThemeChanger from "../../components/common/ThemeChanger/themeChanger";
 
 function Navbar() {
@@ -7,6 +8,26 @@ function Navbar() {
   const handleLinkClick = () => {
     setIsOpen(false);
   };
+
+  const navLinks = (
+    <>
+      <a href="#mainPage" className="item" onClick={handleLinkClick}>
+        <li>Home</li>
+      </a>
+      <a href="#about" className="item" onClick={handleLinkClick}>
+        <li>Sobre</li>
+      </a>
+      <a href="#projects" className="item" onClick={handleLinkClick}>
+        <li>Projetos</li>
+      </a>
+      <a href="" className="item" onClick={handleLinkClick}>
+        <li>Contato</li>
+      </a>
+      <li className="item">
+        <ThemeChanger />
+      </li>
+    </>
+  );
 
   return (
     <header className={`navbarCtn ${!isOpen ? "has-mask" : ""}`}>
@@ -20,23 +41,17 @@ function Navbar() {
         <span></span>
       </div>
 
-      <ul className={`navbarList ${isOpen ? "active" : ""}`}>
-        <a href="#mainPage" className="item" onClick={handleLinkClick}>
-          <li>Home</li>
-        </a>
-        <a href="#about" className="item" onClick={handleLinkClick}>
-          <li>Sobre</li>
-        </a>
-        <a href="#projects" className="item" onClick={handleLinkClick}>
-          <li>Projetos</li>
-        </a>
-        <a href="" className="item" onClick={handleLinkClick}>
-          <li>Contato</li>
-        </a>
-        <li className="item">
-          <ThemeChanger />
-        </li>
+      <ul className="navbarList desktop-nav">
+        {navLinks}
       </ul>
+
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <nav className="mobile-nav">
+          <ul>
+            {navLinks}
+          </ul>
+        </nav>
+      </Modal>
     </header>
   );
 }
