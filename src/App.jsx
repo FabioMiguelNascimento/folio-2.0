@@ -2,7 +2,7 @@ import { useState } from "react";
 import Modal from "./components/common/Modal/modal";
 import About from "./sections/About/About";
 import Hero from "./sections/Hero/Hero";
-import Projects from "./sections/projects/projects";
+import Projects from "./sections/Projects/projects";
 import Resume from "./sections/Resume/Resume";
 
 function App() {
