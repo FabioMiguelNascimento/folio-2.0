@@ -1,11 +1,16 @@
-@use 'base/reset';
-@use 'abstracts/main';
-@use 'components/confetti';
-@use 'components/navbar';
-@use 'components/cursor';
-@use 'components/scrollAnimation';
-@use 'components/modal';
-@use 'sections/hero';
-@use 'sections/resume';
-@use 'sections/about';
-@use 'sections/projects';
+// Base
+@use './base/reset';
+
+// Components
+@use './components/cursor';
+@use './components/modal';
+@use './components/navbar';
+@use './components/confetti';
+@use './components/scrollAnimation';
+
+// Sections
+@use './sections/hero';
+@use './sections/about';
+@use './sections/projects';
+@use './sections/resume';
+@use './sections/allProjects';

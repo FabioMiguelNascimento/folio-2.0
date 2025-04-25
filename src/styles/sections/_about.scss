@@ -4,6 +4,7 @@
   color: $color-text;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 
   .about-header {
     text-align: center;
@@ -52,7 +53,7 @@
         border-radius: 5px;
         padding: 2rem;
         transition: all 0.3s ease;
-        border: 1px solid $color-border;
+        border: 1px solid transparent;
 
         &:hover {
           border-color: $color-roxo;
@@ -98,7 +99,7 @@
               content: '';
               position: absolute;
               left: 3px;
-              top: 0.7rem;
+              top: 1rem;
               width: 2px;
               height: calc(100% + 1rem);
               background: $color-border;

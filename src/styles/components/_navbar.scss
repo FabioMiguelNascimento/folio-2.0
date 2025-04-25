@@ -1,14 +1,16 @@
 @use '../abstracts/main' as *;
 
 .navbarCtn {
+    position: fixed;
     width: 100%;
+    left: 0;
+    top: 0;
     transition: 200ms;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: $color-text;
-    position: fixed;
     background-color: transparent;
     background-image: radial-gradient($color-bg 1px, transparent 1px);
     background-size: 4px 4px;

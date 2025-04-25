@@ -1,22 +1,17 @@
-import { faArrowRight, faCode } from "@fortawesome/free-solid-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { projects } from "../../data/projects";
 
-function Projects() {
-  const featuredProjects = projects.slice(0, 4);
-
+function AllProjects() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { 
-        duration: 0.3,
-        ease: "easeInOut",
-        staggerChildren: 0.15
-      },
-    },
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
   };
 
   const cardVariants = {
@@ -24,36 +19,31 @@ function Projects() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5 }
     }
   };
 
   return (
-    <motion.section
-      className="projectsSection"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{
-        amount: 0.3,
-        margin: "5px 0px 5px 5px",
-        once: true,
-      }}
-      variants={containerVariants}
-    >
-      <div className="sectionHeader">
-        <h2>Projetos Destacados</h2>
-        <Link to="/projects" className="viewAll">
-          Ver todos <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
+    <main className="allProjectsPage">
+      <div className="pageHeader">
+        <h1>Projetos</h1>
+        <p>
+          Aqui estão alguns dos meus projetos recentes. Cada projeto é uma oportunidade de
+          aprendizado e crescimento profissional.
+        </p>
       </div>
 
-      <div className="projectsGrid">
-        {featuredProjects.map((project, index) => (
+      <motion.div 
+        className="projectsGrid"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {projects.map((project) => (
           <motion.div
             key={project.id}
             className="projectCard"
             variants={cardVariants}
-            transition={{ delay: index * 0.2 }}
           >
             <div className="imageWrapper">
               <img src={project.image} alt={project.title} />
@@ -79,9 +69,9 @@ function Projects() {
             </div>
           </motion.div>
         ))}
-      </div>
-    </motion.section>
+      </motion.div>
+    </main>
   );
 }
 
-export default Projects;
+export default AllProjects;

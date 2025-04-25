@@ -5,7 +5,6 @@ section#mainPage {
   position: relative;
   z-index: 1;
   color: $color-text;
-  overflow: hidden;
 
   .hero-wrapper {
     display: grid;
@@ -13,7 +12,7 @@ section#mainPage {
     place-content: center;
     box-sizing: border-box;
     gap: 2.5rem;
-    min-height: calc(100vh - 88px); 
+    min-height: calc(100vh - 88px);
     position: relative;
 
     .leftCtn {
@@ -191,7 +190,6 @@ section#mainPage {
   section#mainPage {
     .hero-wrapper {
       grid-template-columns: 1fr;
-      min-height: calc(100vh - 96px);
       gap: 3rem;
       padding-top: 2rem;
       padding-bottom: 0;

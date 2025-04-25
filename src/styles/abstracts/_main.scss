@@ -79,7 +79,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
-  min-width: 100vw;
   min-height: 100vh;
   background: $color-bg;
   -webkit-background-size: cover;
@@ -92,19 +91,18 @@ body {
   * > * {
     box-sizing: border-box;
   }
+}
 
-  main {
-    margin: 0 auto;
-    max-width: 920px;
-    display: grid;
-    gap: 1.5rem;
-    position: relative;
-    z-index: 2;
-    padding: var(--main-padding);
-    overflow-x: hidden;
+main {
+  margin: 0 auto;
+  max-width: 920px;
+  display: grid;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  padding: var(--main-padding);
 
-    @media screen and (max-width: 768px) {
-      --main-padding: 4rem 1rem;
-    }
+  @media screen and (max-width: 768px) {
+    --main-padding: 4rem 1rem;
   }
 }
