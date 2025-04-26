@@ -1,6 +1,7 @@
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import Button from "../../components/common/Button/Button";
 import { projects } from "../../data/projects";
 
 function AllProjects() {
@@ -59,12 +60,25 @@ function AllProjects() {
                 ))}
               </div>
               <div className="actions">
-                <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="btn">
-                  <FontAwesomeIcon icon={faCode} /> Código
-                </a>
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                <Button
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={faGithub}
+                  variant="ghost"
+                >
+                  Código
+                </Button>
+                <Button
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={faArrowUpRightFromSquare}
+                  iconPosition="right"
+                  variant="pill"
+                >
                   Demo
-                </a>
+                </Button>
               </div>
             </div>
           </motion.div>

@@ -1,0 +1,82 @@
+@use '../abstracts/main' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all $transition-default ease;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  width: fit-content;
+
+  svg {
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.125em;
+  }
+
+  &--primary {
+    background: $color-accent;
+    color: $color-bg;
+
+    &:hover {
+      background: $color-roxo;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secondary {
+    background: $color-text-secondary;
+    color: $color-text-secondary;
+
+    &:hover {
+      background: $color-roxo;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid $color-text;
+    color: $color-text;
+
+    &:hover {
+      background: $color-text;
+      color: $color-bg;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--pill {
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid $color-text;
+    color: $color-text;
+    padding: 0.5rem 1.25rem;
+
+    &:hover {
+      background: $color-text;
+      color: $color-bg;
+      border-color: $color-roxo;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-text;
+    padding: 0.5rem 1.25rem;
+    
+    &:hover {
+      background: $color-text-half-opacity;
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -11,16 +11,16 @@ function Navbar() {
 
   const navLinks = (
     <>
-      <a href="#mainPage" className="item" onClick={handleLinkClick}>
+      <a href="/#mainPage" className="item" onClick={handleLinkClick}>
         <li>Home</li>
       </a>
-      <a href="#about" className="item" onClick={handleLinkClick}>
+      <a href="/#about" className="item" onClick={handleLinkClick}>
         <li>Sobre</li>
       </a>
-      <a href="#projects" className="item" onClick={handleLinkClick}>
+      <a href="/#projects" className="item" onClick={handleLinkClick}>
         <li>Projetos</li>
       </a>
-      <a href="" className="item" onClick={handleLinkClick}>
+      <a href="/#contato" className="item" onClick={handleLinkClick}>
         <li>Contato</li>
       </a>
       <li className="item">
@@ -31,7 +31,8 @@ function Navbar() {
 
   return (
     <header className={`navbarCtn ${!isOpen ? "has-mask" : ""}`}>
-      <h1 className="logo">Fábio Miguel</h1>
+      <h1 className="logo"
+          onClick={() => window.location.href = "/"}>Fábio Miguel</h1>
 
       <div
         className={`hamburger ${isOpen ? "active" : ""}`}

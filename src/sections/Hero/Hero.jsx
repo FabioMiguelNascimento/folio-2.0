@@ -1,7 +1,8 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFileInvoice, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from 'prop-types';
 import BackgroundGrid from "../../components/common/BackgroundGrid/BackgroundGrid";
+import Button from "../../components/common/Button/Button";
 
 function MainPage({ openResume }) {
   return (
@@ -18,26 +19,38 @@ function MainPage({ openResume }) {
           <p className="prof">Desenvolvedor WEB</p>
         </div>
         <div className="buttonsCtn">
-          <a
+          <Button
             href="https://github.com/FabioMiguelNascimento"
             target="_blank"
             rel="noopener noreferrer"
+            icon={faGithub}
+            variant="pill"
           >
-            Github <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a
+            Github
+          </Button>
+          <Button
             href="https://www.linkedin.com/in/fab-nascimento/"
             target="_blank"
             rel="noopener noreferrer"
+            icon={faLinkedin}
+            variant="pill"
           >
-            LinkedIn <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a href="mailto:fabiomnascimento05@gmail.com">
-            Contato <FontAwesomeIcon icon={faPaperPlane} />
-          </a>
-          <a onClick={openResume}>
-            Currículo <FontAwesomeIcon icon={faFileInvoice} />
-          </a>
+            LinkedIn
+          </Button>
+          <Button
+            href="mailto:fabiomnascimento05@gmail.com"
+            icon={faPaperPlane}
+            variant="pill"
+          >
+            Contato
+          </Button>
+          <Button
+            onClick={openResume}
+            icon={faFileInvoice}
+            variant="pill"
+          >
+            Currículo
+          </Button>
         </div>
       </div>
 
@@ -47,5 +60,9 @@ function MainPage({ openResume }) {
     </div>
   );
 }
+
+MainPage.propTypes = {
+  openResume: PropTypes.func.isRequired
+};
 
 export default MainPage;

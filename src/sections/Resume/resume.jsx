@@ -8,14 +8,79 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { useCallback, useEffect, useState } from "react";
+import Button from "../../components/common/Button/Button";
 import Confetti from "../../components/ui/Confetti/confetti";
 
 function Resume({ setSpecial }) {
   const [showConfetti, setShowConfetti] = useState(false);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
+  const skills = [
+    {
+      name: "JQuery",
+      url: "/icons/jqueryIco.webp",
+    },
+    {
+      name: "HTML5",
+      icon: faHtml5,
+    },
+    {
+      name: "CSS",
+      icon: faSass,
+    },
+    {
+      name: "JavaScript",
+      icon: faJs,
+    },
+    {
+      name: "React",
+      icon: faReact,
+    },
+    {
+      name: "Git",
+      icon: faGit,
+    },
+    {
+      name: "Figma",
+      icon: faFigma,
+    },
+    {
+      name: "WebSocket",
+      url: "/icons/websocket.png",
+    },
+    {
+      name: "MySQL",
+      url: "/icons/mysqlIco.png",
+    },
+  ];
+
+  const education = [
+    {
+      degree: "Análise e Desenvolvimento de Sistemas",
+      institution: "Senac RS",
+      year: "2022 - 2024",
+    },
+    {
+      degree: "Sistemas para Internet",
+      institution: "FACCAT - Faculdades Integradas de Taquara/RS",
+      year: "2023 - 2027",
+    },
+  ];
+
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function (...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  };
+
+  const updateMousePosition = useCallback((e) => {
+    requestAnimationFrame(() => {
       document.querySelectorAll(".skill-item").forEach((item) => {
         const rect = item.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -24,25 +89,30 @@ function Resume({ setSpecial }) {
         item.style.setProperty("--mouse-x", `${x}px`);
         item.style.setProperty("--mouse-y", `${y}px`);
       });
-    };
+    });
+  }, []);
 
+  useEffect(() => {
+    const throttledMouseMove = throttle(updateMousePosition, 16);
     const skillsGrid = document.querySelector(".skills-grid");
-    skillsGrid?.addEventListener("mousemove", handleMouseMove);
 
-    // Configurar botões especiais
+    if (skillsGrid) {
+      skillsGrid.addEventListener("mousemove", throttledMouseMove);
+    }
+
     setSpecial([
       {
         id: "download",
         content: (
-          <span
-            className="special-btn"
+          <Button
+            variant="secondary"
+            icon={faDownload}
             onClick={async () => {
               try {
                 const response = await fetch("/assets/resume.pdf");
                 if (!response.ok) {
                   throw new Error(`Response status: ${response.status}`);
                 }
-                // Mostra o confete
                 setShowConfetti(true);
                 setTimeout(async () => {
                   setShowConfetti(false);
@@ -59,18 +129,19 @@ function Resume({ setSpecial }) {
               }
             }}
           >
-            <FontAwesomeIcon icon={faDownload} />
             Download
-          </span>
+          </Button>
         ),
       },
     ]);
 
     return () => {
-      skillsGrid?.removeEventListener("mousemove", handleMouseMove);
-      setSpecial([]); // Limpa os botões especiais quando o componente é desmontado
+      if (skillsGrid) {
+        skillsGrid.removeEventListener("mousemove", throttledMouseMove);
+      }
+      setSpecial([]);
     };
-  }, [setSpecial]);
+  }, [setSpecial, updateMousePosition]);
 
   return (
     <div className="resume-container">
@@ -101,62 +172,35 @@ function Resume({ setSpecial }) {
       <div className="resume-section">
         <h3>Habilidades</h3>
         <div className="skills-grid">
-          <div className="skill-item">
-            <FontAwesomeIcon icon={faReact} />
-            React
-          </div>
-          <div className="skill-item">
-            <FontAwesomeIcon icon={faJs} />
-            JavaScript
-          </div>
-          <div className="skill-item">
-            <img src="/icons/jqueryIco.webp" alt="jquery" />
-            jQuery
-          </div>
-          <div className="skill-item">
-            <FontAwesomeIcon icon={faHtml5} />
-            HTML5
-          </div>
-          <div className="skill-item">
-            <FontAwesomeIcon icon={faSass} />
-            SCSS
-          </div>
-          <div className="skill-item">
-            <FontAwesomeIcon icon={faGit} />
-            Git
-          </div>
-          <div className="skill-item">
-            <FontAwesomeIcon icon={faFigma} />
-            Figma
-          </div>
-          <div className="skill-item">
-            <img src="/icons/websocket.png" alt="websocket" />
-            WebSocket
-          </div>
-          <div className="skill-item">
-            <img src="/icons/mysqlIco.png" alt="mysql" />
-            MySQL
-          </div>
+          {skills.map((skill, index) => (
+            <div key={index} className="skill-item">
+              {skill.icon ? (
+                <FontAwesomeIcon icon={skill.icon} size="2x" />
+              ) : (
+                <img src={skill.url} alt={skill.name} className="skill-icon" />
+              )}
+              <span>{skill.name}</span>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="resume-section">
         <h3>Educação</h3>
-        <div className="education-item">
-          <h4>Análise e Desenvolvimento de Sistemas</h4>
-          <p className="institution">Senac RS</p>
-          <p className="period">2022 - 2024</p>
-        </div>
-        <div className="education-item">
-          <h4>Sistemas para Internet</h4>
-          <p className="institution">
-            FACCAT - Faculdades Integradas de Taquara/RS
-          </p>
-          <p className="period">2023 - 2027</p>
-        </div>
+          {education.map((edu, index) => (
+            <div key={index} className="education-item">
+              <h4>{edu.degree}</h4>
+              <p className="institution">{edu.institution}</p>
+              <p className="year">{edu.year}</p>
+            </div>
+          ))}
       </div>
     </div>
   );
 }
+
+Resume.propTypes = {
+  setSpecial: PropTypes.func.isRequired,
+};
 
 export default Resume;

@@ -1,11 +1,11 @@
-import { faArrowRight, faCode } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRight, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Button from "../../components/common/Button/Button";
 import { projects } from "../../data/projects";
 
 function Projects() {
-  const featuredProjects = projects.slice(0, 4);
+  const featuredProjects = projects.slice(0, 3);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,16 +42,20 @@ function Projects() {
     >
       <div className="sectionHeader">
         <h2>Projetos Destacados</h2>
-        <Link to="/projects" className="viewAll">
-          Ver todos <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
+        <Button 
+          to="/projects" 
+          variant="ghost"
+          icon={faArrowRight}
+        >
+          Ver todos
+        </Button>
       </div>
 
       <div className="projectsGrid">
         {featuredProjects.map((project, index) => (
           <motion.div
             key={project.id}
-            className="projectCard"
+            className={`projectCard ${index === 2 ? 'projectCard--featured' : ''}`}
             variants={cardVariants}
             transition={{ delay: index * 0.2 }}
           >
@@ -69,12 +73,25 @@ function Projects() {
                 ))}
               </div>
               <div className="actions">
-                <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="btn">
-                  <FontAwesomeIcon icon={faCode} /> Código
-                </a>
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                <Button
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={faGithub}
+                  variant="ghost"
+                >
+                  Código
+                </Button>
+                <Button
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={faArrowUpRightFromSquare}
+                  iconPosition="right"
+                  variant="pill"
+                >
                   Demo
-                </a>
+                </Button>
               </div>
             </div>
           </motion.div>

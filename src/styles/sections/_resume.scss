@@ -1,20 +1,5 @@
 @use '../abstracts/main' as *;
 
-.special-btn {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(to right, $gradient-purple);
-  color: $force-white !important;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  * > * {
-    color: $force-white !important;
-  }
-}
-
 .resume-section {
   margin-bottom: 3rem;
 
@@ -74,7 +59,6 @@
       background: $color-bg-accent;
       padding: 1rem;
       text-align: center;
-      transition: all 200ms ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -83,6 +67,8 @@
 
       border: 2px solid transparent;
       background-clip: padding-box;
+      will-change: transform;
+      transform: translateZ(0);
 
       // Efeito de spotilght
       &::before {
@@ -92,7 +78,7 @@
         border-radius: 0.5rem;
         padding: 2px;
         background: radial-gradient(
-          200px circle at var(--mouse-x) var(--mouse-y),
+          200px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
           $color-roxo,
           transparent 40%
         );
@@ -101,7 +87,8 @@
         -webkit-mask-composite: xor;
         pointer-events: none;
         opacity: 0;
-        transition: 200ms;
+        transition: opacity 150ms ease;
+        will-change: opacity;
       }
 
       svg,
@@ -126,11 +113,12 @@
       // a borda no hover
       &:hover {
         transform: translateY(-2px);
+        transition: transform 150ms ease;
 
         &::before {
           opacity: 1;
           background: radial-gradient(
-            400px circle at var(--mouse-x) var(--mouse-y),
+            400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
             $color-roxo,
             transparent 40%
           );
