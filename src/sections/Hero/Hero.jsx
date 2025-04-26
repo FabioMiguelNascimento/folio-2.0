@@ -3,6 +3,7 @@ import { faFileInvoice, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from 'prop-types';
 import BackgroundGrid from "../../components/common/BackgroundGrid/BackgroundGrid";
 import Button from "../../components/common/Button/Button";
+import LazyImage from "../../components/common/LazyImage/LazyImage";
 
 function MainPage({ openResume }) {
   return (
@@ -38,7 +39,7 @@ function MainPage({ openResume }) {
             LinkedIn
           </Button>
           <Button
-            href="mailto:fabiomnascimento05@gmail.com"
+            href="/#contact"
             icon={faPaperPlane}
             variant="pill"
           >
@@ -55,7 +56,7 @@ function MainPage({ openResume }) {
       </div>
 
       <div className="rightCtn">
-        <img src="/images/profile/profile.jpg" alt="" />
+        <LazyImage src="/images/profile/profile.jpg" alt="Profile" />
       </div>
     </div>
   );

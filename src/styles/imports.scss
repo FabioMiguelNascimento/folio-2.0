@@ -2,6 +2,7 @@
 @use './base/reset';
 
 // Components
+@use './components/_lazyImage.scss';
 @use './components/button';
 @use './components/cursor';
 @use './components/modal';
@@ -15,3 +16,4 @@
 @use './sections/projects';
 @use './sections/resume';
 @use './sections/allProjects';
+@use './sections/contact';

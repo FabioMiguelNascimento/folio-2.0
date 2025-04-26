@@ -1,5 +1,4 @@
 import {
-  faArrowRight,
   faBriefcase,
   faCode,
   faGraduationCap,
@@ -121,12 +120,6 @@ function About() {
               </div>
             </div>
           </div>
-        </motion.div>
-
-        <motion.div className="about-footer" variants={itemVariants}>
-          <a href="#contact" className="contact-link">
-            Vamos conversar <FontAwesomeIcon icon={faArrowRight} />
-          </a>
         </motion.div>
       </div>
     </motion.div>

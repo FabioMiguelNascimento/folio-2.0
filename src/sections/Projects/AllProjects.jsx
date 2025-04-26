@@ -2,6 +2,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Button from "../../components/common/Button/Button";
+import LazyImage from "../../components/common/LazyImage/LazyImage";
 import { projects } from "../../data/projects";
 
 function AllProjects() {
@@ -47,7 +48,11 @@ function AllProjects() {
             variants={cardVariants}
           >
             <div className="imageWrapper">
-              <img src={project.image} alt={project.title} />
+              <LazyImage 
+                src={project.image} 
+                alt={project.title}
+                loadDelay={Math.random() * 1000} // Adiciona um delay aleatório entre 0-1s para efeito de demonstração
+              />
             </div>
             <div className="content">
               <h3>{project.title}</h3>

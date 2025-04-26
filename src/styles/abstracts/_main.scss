@@ -18,6 +18,11 @@ body.light {
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
   --is-dark-theme: 0;
   --main-padding: 6rem 2rem;
+  --color-floating-icon: var(--color-roxo);
+  --color-form-border: var(--color-border);
+  --color-form-success: var(--color-bg-accent);
+  --color-form-input: var(--color-bg);
+  --color-form-placeholder: var(--color-text);
 }
 
 body.dark {
@@ -38,6 +43,11 @@ body.dark {
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
   --is-dark-theme: 1;
   --main-padding: 6rem 2rem;
+  --color-floating-icon: var(--color-roxo);
+  --color-form-border: var(--color-border);
+  --color-form-success: var(--color-bg-accent);
+  --color-form-input: var(--color-bg-accent);
+  --color-form-placeholder: var(--color-text);
 }
 
 $force-white: var(--force-white);

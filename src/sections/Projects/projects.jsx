@@ -2,6 +2,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Button from "../../components/common/Button/Button";
+import LazyImage from "../../components/common/LazyImage/LazyImage";
 import { projects } from "../../data/projects";
 
 function Projects() {
@@ -60,7 +61,7 @@ function Projects() {
             transition={{ delay: index * 0.2 }}
           >
             <div className="imageWrapper">
-              <img src={project.image} alt={project.title} />
+              <LazyImage src={project.image} alt={project.title} />
             </div>
             <div className="content">
               <h3>{project.title}</h3>

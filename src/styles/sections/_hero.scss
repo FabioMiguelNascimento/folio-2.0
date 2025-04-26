@@ -1,4 +1,4 @@
-@use '../abstracts/main' as *;
+@use "../abstracts/main" as *;
 
 section#mainPage {
   min-height: 100vh;
@@ -124,8 +124,9 @@ section#mainPage {
       gap: 1.5rem;
       justify-items: end;
       align-items: center;
+      overflow: hidden;
 
-      img {
+      .lazy-image-container {
         width: 100%;
         max-width: 300px;
         height: 500px;
@@ -164,7 +165,7 @@ section#mainPage {
               white-space: nowrap;
 
               .emoji {
-                width: .9rem;
+                width: 0.9rem;
                 height: 1.3rem;
 
                 img {
