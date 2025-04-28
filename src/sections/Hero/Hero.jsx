@@ -1,15 +1,17 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFileInvoice, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from 'prop-types';
+import { useRef } from "react";
 import BackgroundGrid from "../../components/common/BackgroundGrid/BackgroundGrid";
 import Button from "../../components/common/Button/Button";
 import LazyImage from "../../components/common/LazyImage/LazyImage";
 
 function MainPage({ openResume }) {
+  const containerRef = useRef(null);
+
   return (
-    <div className="hero-wrapper">
-      <BackgroundGrid />
-      <div className="leftCtn">
+    <div className="hero-wrapper" ref={containerRef} style={{ position: 'relative' }}>
+      <div className="leftCtn" style={{ position: 'relative', zIndex: 2 }}>
         <div className="title">
           <div className="title-row">
             <p className="hello">
@@ -55,9 +57,10 @@ function MainPage({ openResume }) {
         </div>
       </div>
 
-      <div className="rightCtn">
+      <div className="rightCtn" style={{ position: 'relative', zIndex: 2 }}>
         <LazyImage src="/images/profile/profile.jpg" alt="Profile" />
       </div>
+      <BackgroundGrid containerRef={containerRef} />
     </div>
   );
 }

@@ -7,13 +7,13 @@ section#mainPage {
   color: $color-text;
 
   .hero-wrapper {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     place-content: center;
     box-sizing: border-box;
     gap: 2.5rem;
-    min-height: calc(100vh - 88px);
-    position: relative;
+    min-height: calc(100vh - $navbar-height);
 
     .leftCtn {
       display: flex;

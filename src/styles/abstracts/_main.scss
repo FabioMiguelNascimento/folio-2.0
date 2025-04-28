@@ -11,7 +11,7 @@ body.light {
   --color-button-hover: #121212;
   --color-border: #e4e4e4;
   --color-text: #303030;
-  --color-text-half-opacity: rgba(48, 48, 48, 0.1);
+  --color-text-half-opacity: rgba(48, 48, 48, 0.1); 
   --color-text-secondary: #eeeeee;
   --gradient-default: var(--color-bg), var(--color-bg-accent), var(--color-bg);
   --gradient-purple: var(--color-roxo), var(--color-roxo-accent), var(--color-roxo);
@@ -27,6 +27,7 @@ body.light {
   --color-form-placeholder: var(--color-text);
   --navbar-height: 88px;
   --navbar-height-mobile: 72px;
+  --color-grid-dots: rgba(48, 48, 48, 0.3);
 }
 
 body.dark {
@@ -56,6 +57,7 @@ body.dark {
   --color-form-placeholder: var(--color-text);
   --navbar-height: 88px;
   --navbar-height-mobile: 72px;
+  --color-grid-dots: rgba(238, 238, 238, 0.3);
 }
 
 $force-white: var(--force-white);
@@ -77,6 +79,7 @@ $navbar-height: var(--navbar-height);
 $navbar-height-mobile: var(--navbar-height-mobile);
 $main-padding-vertical: var(--main-padding-vertical);
 $main-padding-horizontal: var(--main-padding-horizontal);
+$color-grid-dots: var(--color-grid-dots);
 
 $transition-fast: 100ms;
 $transition-default: 300ms;

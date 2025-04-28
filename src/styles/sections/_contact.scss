@@ -1,16 +1,25 @@
 @use "../abstracts/main" as *;
 
+section#contact {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  color: $color-text;
+}
+
 .contact-container {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: $main-padding-vertical $main-padding-horizontal;
-  color: $color-text;
-  overflow: hidden;
+  min-height: calc(100vh - $navbar-height);
+  display: flex;
+  align-items: center;
 
   .contact-content-wrapper {
+    width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
@@ -322,8 +331,8 @@
           padding: 1.2rem;
 
           .social-links {
-            flex-direction: row; // Forçar row mesmo em mobile
-            flex-wrap: wrap; // Permitir wrap se necessário
+            flex-direction: row;
+            flex-wrap: wrap;
             gap: 0.8rem;
 
             .btn {
