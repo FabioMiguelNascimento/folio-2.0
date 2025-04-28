@@ -4,6 +4,7 @@ import Cursor from "../components/common/Cursor/cursor";
 import ScrollAnimation from "../components/common/ScrollAnimation/scrollAnimation";
 import ScrollToTop from "../components/common/ScrollToTop/ScrollToTop";
 import Navbar from "./Navbar/navbar";
+import Footer from "../sections/Footer/Footer";
 
 function RootLayout() {
   return (
@@ -14,6 +15,7 @@ function RootLayout() {
       <ScrollAnimation />
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }
