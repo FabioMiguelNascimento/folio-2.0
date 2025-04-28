@@ -1,0 +1,107 @@
+@use "../abstracts/main" as *;
+
+.footer {
+    background-color: $color-bg-accent;
+    margin-top: 4rem;
+    padding: 4rem 2rem 2rem;
+    width: 100%;
+    border-top: 1px solid $color-border;
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-sections {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-main {
+        .footer-title {
+            color: $color-text;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, $gradient-text-purple);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-description {
+            color: $color-text;
+            font-size: .9rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-nav {
+        .footer-links {
+            h4 {
+                color: $color-text;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+
+                .btn {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid $color-border;
+        padding-top: 2rem;
+        text-align: center;
+
+        .copyright {
+            color: $color-text;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 3rem 1.5rem 1.5rem;
+
+        .footer-sections {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .footer-main {
+            text-align: center;
+        }
+
+        .social-links {
+            justify-content: center;
+        }
+
+        .footer-nav {
+            .footer-links {
+                text-align: center;
+
+                nav {
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import Contact from "./sections/Contact/Contact";
 import Hero from "./sections/Hero/Hero";
 import Projects from "./sections/Projects/projects";
 import Resume from "./sections/Resume/resume";
+import Footer from "./sections/Footer/Footer";
 
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -33,6 +34,7 @@ function App() {
       <section id="contact">
         <Contact />
       </section>
+        <Footer />
     </>
   );
 }
