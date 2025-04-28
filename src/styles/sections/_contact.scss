@@ -4,7 +4,7 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: $main-padding-vertical $main-padding-horizontal;
   color: $color-text;
   overflow: hidden;
 
@@ -56,6 +56,11 @@
           display: flex;
           gap: 1rem;
           justify-content: center;
+
+          .btn {
+            flex: 1;
+            max-width: 200px;
+          }
         }
       }
     }
@@ -250,8 +255,7 @@
           }
 
           .social-links {
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 0.8rem;
             
             .btn {
               flex: 1;
@@ -318,11 +322,13 @@
           padding: 1.2rem;
 
           .social-links {
-            flex-direction: column;
+            flex-direction: row; // Forçar row mesmo em mobile
+            flex-wrap: wrap; // Permitir wrap se necessário
             gap: 0.8rem;
 
             .btn {
-              width: 100%;
+              flex: 1;
+              min-width: 120px;
             }
           }
         }
@@ -337,7 +343,7 @@
               margin-bottom: 1rem;
             }
 
-            .form-success {
+            .form-success { 
               font-size: 0.9rem;
               padding: 0.8rem;
             }

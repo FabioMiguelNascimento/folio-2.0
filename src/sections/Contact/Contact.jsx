@@ -1,7 +1,6 @@
 import { useForm } from "@formspree/react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faEnvelope, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Button from "../../components/common/Button/Button";
 
@@ -139,7 +138,6 @@ function Contact() {
                 ) : (
                   <>
                     Enviar mensagem
-                    <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
                   </>
                 )}
               </Button>

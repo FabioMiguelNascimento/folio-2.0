@@ -200,10 +200,11 @@ section#mainPage {
         order: 1;
         justify-items: center;
 
-        img {
+        .lazy-image-container {
           width: 200px;
           height: 280px;
           border-radius: 100px;
+          max-width: none;
         }
       }
     }
@@ -231,7 +232,7 @@ section#mainPage {
       }
 
       .rightCtn {
-        img {
+        .lazy-image-container {
           width: 180px;
           height: 250px;
           border-radius: 90px;

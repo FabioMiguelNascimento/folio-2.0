@@ -43,7 +43,6 @@ function About() {
     >
       <div className="about-header">
         <motion.h2 variants={itemVariants}>Sobre Mim</motion.h2>
-        <motion.div className="header-line" variants={itemVariants} />
       </div>
 
       <div className="about-content">

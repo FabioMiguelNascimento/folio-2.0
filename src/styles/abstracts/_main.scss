@@ -18,11 +18,15 @@ body.light {
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
   --is-dark-theme: 0;
   --main-padding: 6rem 2rem;
+  --main-padding-vertical: 6rem;
+  --main-padding-horizontal: 2rem;
   --color-floating-icon: var(--color-roxo);
   --color-form-border: var(--color-border);
   --color-form-success: var(--color-bg-accent);
   --color-form-input: var(--color-bg);
   --color-form-placeholder: var(--color-text);
+  --navbar-height: 88px;
+  --navbar-height-mobile: 72px;
 }
 
 body.dark {
@@ -43,11 +47,15 @@ body.dark {
   --gradient-text-purple: var(--color-text), var(--color-roxo) 80%;
   --is-dark-theme: 1;
   --main-padding: 6rem 2rem;
+  --main-padding-vertical: 6rem;
+  --main-padding-horizontal: 2rem;
   --color-floating-icon: var(--color-roxo);
   --color-form-border: var(--color-border);
   --color-form-success: var(--color-bg-accent);
   --color-form-input: var(--color-bg-accent);
   --color-form-placeholder: var(--color-text);
+  --navbar-height: 88px;
+  --navbar-height-mobile: 72px;
 }
 
 $force-white: var(--force-white);
@@ -65,6 +73,10 @@ $color-text-secondary: var(--color-text-secondary);
 $gradient-default: var(--gradient-default);
 $gradient-purple: var(--gradient-purple);
 $gradient-text-purple: var(--gradient-text-purple);
+$navbar-height: var(--navbar-height);
+$navbar-height-mobile: var(--navbar-height-mobile);
+$main-padding-vertical: var(--main-padding-vertical);
+$main-padding-horizontal: var(--main-padding-horizontal);
 
 $transition-fast: 100ms;
 $transition-default: 300ms;
@@ -109,9 +121,12 @@ main {
   gap: 1.5rem;
   position: relative;
   z-index: 2;
-  padding: var(--main-padding);
+  padding: $main-padding-vertical $main-padding-horizontal;
+}
 
-  @media screen and (max-width: 768px) {
-    --main-padding: 4rem 1rem;
+@media screen and (max-width: 768px) {
+  body.light, body.dark {
+    --main-padding-vertical: 4rem;
+    --main-padding-horizontal: 1rem;
   }
 }

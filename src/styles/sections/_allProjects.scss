@@ -3,7 +3,7 @@
 .allProjectsPage {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: calc($navbar-height + $main-padding-vertical) $main-padding-horizontal $main-padding-vertical;
   min-height: 100vh;
   color: $color-text;
 
@@ -119,7 +119,7 @@
 
 @media (max-width: 768px) {
   .allProjectsPage {
-    padding: 4rem 1rem;
+    padding: calc($navbar-height-mobile + $main-padding-vertical) $main-padding-horizontal $main-padding-vertical;
 
     .pageHeader {
       h1 {

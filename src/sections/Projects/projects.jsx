@@ -41,16 +41,18 @@ function Projects() {
       }}
       variants={containerVariants}
     >
-      <div className="sectionHeader">
-        <h2>Projetos Destacados</h2>
-        <Button 
-          to="/projects" 
-          variant="ghost"
-          icon={faArrowRight}
-        >
-          Ver todos
-        </Button>
-      </div>
+      <motion.div className="section-header" variants={cardVariants}>
+        <div className="header-content">
+          <h2>Projetos Destacados</h2>
+          <Button 
+            to="/projects" 
+            variant="ghost"
+            icon={faArrowRight}
+          >
+            Ver todos
+          </Button>
+        </div>
+      </motion.div>
 
       <div className="projectsGrid">
         {featuredProjects.map((project, index) => (
