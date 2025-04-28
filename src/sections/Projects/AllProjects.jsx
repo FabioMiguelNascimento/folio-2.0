@@ -47,13 +47,18 @@ function AllProjects() {
             className="projectCard"
             variants={cardVariants}
           >
-            <div className="imageWrapper">
+            <a 
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="imageWrapper"
+            >
               <LazyImage 
                 src={project.image} 
                 alt={project.title}
                 loadDelay={Math.random() * 1000} // Adiciona um delay aleatório entre 0-1s para efeito de demonstração
               />
-            </div>
+            </a>
             <div className="content">
               <h3>{project.title}</h3>
               <p>{project.description}</p>

@@ -62,9 +62,17 @@ function Projects() {
             variants={cardVariants}
             transition={{ delay: index * 0.2 }}
           >
-            <div className="imageWrapper">
-              <LazyImage src={project.image} alt={project.title} />
-            </div>
+            <a 
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="imageWrapper"
+            >
+              <LazyImage 
+                src={project.image} 
+                alt={project.title} 
+              />
+            </a>
             <div className="content">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
