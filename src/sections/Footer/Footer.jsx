@@ -57,7 +57,7 @@ export default function Footer() {
                         </p>
                         <div className="social-links">
                             <Button
-                                href="https://github.com/fabiomigueldev"
+                                href="https://github.com/FabioMiguelNascimento"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 icon={faGithub}
