@@ -3,10 +3,10 @@ export const projects = [
     id: 1,
     title: "Portfolio Pessoal",
     description: "Site pessoal desenvolvido com React e SCSS, apresentando projetos, habilidades e experiências de forma interativa e responsiva.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop&q=80",
+    image: "/images/projects/portfolio.png",
     tags: ["React", "SCSS", "Framer Motion"],
     codeUrl: "https://github.com/FabioMiguelNascimento",
-    demoUrl: "https://demo.com/portfolio"
+    demoUrl: "https://portfolio-fabio-miguel.vercel.app/"
   },
   {
     id: 2,
@@ -57,9 +57,9 @@ export const projects = [
     id: 7,
     title: "Weather App",
     description: "Aplicativo de previsão do tempo com geolocalização, mapas interativos e alertas meteorológicos.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&auto=format&fit=crop&q=80",
-    tags: ["React", "OpenWeather API", "Leaflet", "TailwindCSS"],
-    codeUrl: "https://github.com/user/weather",
-    demoUrl: "https://demo.com/weather"
+    image: "/images/projects/weather-app.png",
+    tags: ["React", "OpenWeather API", "Axios", "SCSS"],
+    codeUrl: "https://github.com/FabioMiguelNascimento/weatherApp",
+    demoUrl: "https://weather-app-sable-seven-58.vercel.app/"
   }
 ];
