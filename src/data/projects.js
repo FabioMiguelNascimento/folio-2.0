@@ -15,7 +15,7 @@ export const projects = [
     image: "/images/projects/ais-update.png",
     tags: ["React", "Firebase", "SCSS", "Markdown"],
     codeUrl: null,
-    demoUrl: "ais-update.vercel.app"
+    demoUrl: "https://ais-update.vercel.app"
   },
   {
     id: 3,
