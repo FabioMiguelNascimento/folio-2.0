@@ -19,6 +19,15 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Bizzconnect",
+    description: "Aplicativo de rede social para profissionais, com recursos de mensagens, grupos e compartilhamento de conteúdo. Utilize de todos os meios de comunicação atuais para se conectar com seus colegas/clientes.",
+    image: "/images/projects/bizzconnect.png",
+    tags: ["React", "Redis", "Node.js", "MongoDB", "Socket.io", "CloudflareStorage"],
+    codeUrl: null,
+    demoUrl: "https://bizzconnect-nu.vercel.app/pt-BR"
+  },
+  {
+    id: 4,
     title: "Weather App",
     description: "Aplicativo de previsão do tempo com geolocalização, mapas interativos e alertas meteorológicos.",
     image: "/images/projects/weather-app.png",
@@ -27,22 +36,13 @@ export const projects = [
     demoUrl: "https://weather-app-sable-seven-58.vercel.app/"
   },
   {
-    id: 4,
+    id: 5,
     title: "Portfolio Maya",
     description: "Portfolio profissional desenvolvido para minha esposa, apresentando seus trabalhos e experiências de forma elegante e responsiva.",
     image: "/images/projects/maya-portfolio.png",
     tags: ["React", "SCSS", "Responsive Design", "Framer Motion"],
     codeUrl: "https://github.com/FabioMiguelNascimento/maya-portfolio",
     demoUrl: "https://maya-portfolio-topaz.vercel.app/"
-  },
-  {
-    id: 5,
-    title: "Task Manager",
-    description: "Aplicativo de gerenciamento de tarefas com recursos de drag-and-drop, categorias e lembretes.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop&q=80",
-    tags: ["React", "Redux", "Node.js", "PostgreSQL"],
-    codeUrl: "https://github.com/user/taskmanager",
-    demoUrl: "https://demo.com/taskmanager"
   },
   {
     id: 6,

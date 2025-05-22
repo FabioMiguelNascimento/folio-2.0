@@ -70,15 +70,17 @@ function AllProjects() {
                 ))}
               </div>
               <div className="actions">
-                <Button
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  icon={faGithub}
-                  variant="ghost"
-                >
-                  Código
-                </Button>
+                {project.codeUrl && (
+                  <Button
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    icon={faGithub}
+                    variant="ghost"
+                  >
+                    Código
+                  </Button>
+                )}
                 <Button
                   href={project.demoUrl}
                   target="_blank"

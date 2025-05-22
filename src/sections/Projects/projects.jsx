@@ -1,5 +1,8 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Button from "../../components/common/Button/Button";
 import LazyImage from "../../components/common/LazyImage/LazyImage";
@@ -12,10 +15,10 @@ function Projects() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.3,
         ease: "easeInOut",
-        staggerChildren: 0.15
+        staggerChildren: 0.15,
       },
     },
   };
@@ -25,8 +28,8 @@ function Projects() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -44,11 +47,7 @@ function Projects() {
       <motion.div className="section-header" variants={cardVariants}>
         <div className="header-content">
           <h2>Projetos Destacados</h2>
-          <Button 
-            to="/projects" 
-            variant="ghost"
-            icon={faArrowRight}
-          >
+          <Button to="/projects" variant="ghost" icon={faArrowRight}>
             Ver todos
           </Button>
         </div>
@@ -58,20 +57,19 @@ function Projects() {
         {featuredProjects.map((project, index) => (
           <motion.div
             key={project.id}
-            className={`projectCard ${index === 2 ? 'projectCard--featured' : ''}`}
+            className={`projectCard ${
+              index === 2 ? "projectCard--featured" : ""
+            }`}
             variants={cardVariants}
             transition={{ delay: index * 0.2 }}
           >
-            <a 
+            <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="imageWrapper"
             >
-              <LazyImage 
-                src={project.image} 
-                alt={project.title} 
-              />
+              <LazyImage src={project.image} alt={project.title} />
             </a>
             <div className="content">
               <h3>{project.title}</h3>
@@ -84,15 +82,17 @@ function Projects() {
                 ))}
               </div>
               <div className="actions">
-                <Button
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  icon={faGithub}
-                  variant="ghost"
-                >
-                  Código
-                </Button>
+                {project.codeUrl && (
+                  <Button
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    icon={faGithub}
+                    variant="ghost"
+                  >
+                    Código
+                  </Button>
+                )}  
                 <Button
                   href={project.demoUrl}
                   target="_blank"
